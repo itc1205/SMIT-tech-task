@@ -5,11 +5,11 @@ from fastapi import HTTPException
 
 
 async def set_new_schema(new_schema: schemas.OurSchema):
-    
     await model.RateAggregator.all().delete()
     await model.RateAtom.all().delete()
 
     return await append_schema(new_schema)
+
 
 async def append_schema(new_schema: schemas.OurSchema):
     for date in new_schema.__root__.keys():

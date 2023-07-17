@@ -16,6 +16,7 @@ async def set_schema(new_schema: OurSchema):
     """Clears and sets new schema"""
     return await service.set_new_schema(new_schema)
 
+
 @api.put("/")
 async def set_schema(new_schema: OurSchema):
     """Appends existing schema"""

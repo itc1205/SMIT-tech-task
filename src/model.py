@@ -45,4 +45,4 @@ Tortoise.init_models(["src.model"], "models")
 #         orm_mode = True
 
 RateSchema = pydantic_model_creator(RateAtom, name="Rate")
-RateAggregatorSchema = pydantic_model_creator(RateAggregator, name="RatesIn")
+# RateAggregatorSchema = pydantic_model_creator(RateAggregator, name="RatesIn")

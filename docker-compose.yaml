@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  api:
+    image: app-image
+    environment:
+      - DB_HOST=postgres
+      - DB_PASSWORD=insurance
+      - API_HOST=api
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./src:/src
+      - ./tests:/tests
+    entrypoint:
+      - uvicorn
+      - endpoint.main:api
+      - --host=0.0.0.0
+      - --port=80
+    ports:
+      - "5005:80"
+
+  postgres:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_USER=insurance
+      - POSTGRES_PASSWORD=abc123
+    ports:
+      - "54321:5432"

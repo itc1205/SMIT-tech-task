@@ -14,8 +14,8 @@ packaging==23.1
 pathspec==0.11.1
 platformdirs==3.9.1
 pluggy==1.2.0
-pydantic==2.0.3
-pydantic_core==2.3.0
+pydantic==1.*
+
 pypika-tortoise==0.1.6
 pytest==7.4.0
 pytz==2023.3

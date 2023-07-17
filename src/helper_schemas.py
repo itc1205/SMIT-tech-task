@@ -12,7 +12,7 @@ class CalculateData(BaseModel):
     date: date
 
 
-class AddNewSchema(BaseModel):
+class OurSchema(BaseModel):
     __root__: dict[date, List[RateSchema]] = Field(
         example={"2022-01-01": [{"cargo_type": "Glass", "rate": 0.015}]}
     )

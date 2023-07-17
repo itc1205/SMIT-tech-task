@@ -32,3 +32,7 @@ docker-compose up -d
 #Для завершения работы
 docker-compose down --remove-orphans
 ```
+
+После этого сервер будет работать по адресу
+
+`0.0.0.0:5005`

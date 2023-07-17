@@ -4,7 +4,14 @@ from src import model
 from fastapi import HTTPException
 
 
-async def add_new_schema(new_schema: schemas.AddNewSchema):
+async def set_new_schema(new_schema: schemas.OurSchema):
+    
+    await model.RateAggregator.all().delete()
+    await model.RateAtom.all().delete()
+
+    return await append_schema(new_schema)
+
+async def append_schema(new_schema: schemas.OurSchema):
     for date in new_schema.__root__.keys():
         ra = await model.RateAggregator.create(date=date)
         for rate in new_schema.__root__[date]:
